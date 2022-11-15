@@ -1,8 +1,14 @@
 package com.rupesh.practice.springboot.model;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
@@ -21,6 +27,7 @@ public class AppUser {
             sequenceName = "user_sequence",
             allocationSize = 1
     )
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     private Long id;
     private String name;
