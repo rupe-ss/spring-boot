@@ -9,6 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -52,4 +53,10 @@ public class AppUserServiceImpl implements AppUserService{
             user.get().getRoles().add(role);
         }
     }
+
+    @Override
+    public List<AppUser> getAllUsers() {
+        return appUserRepository.findAll();
+    }
+
 }
